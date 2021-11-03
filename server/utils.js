@@ -11,9 +11,11 @@ module.exports = {
       return accum;
     }, {});
     return posts
-      .filter( post => userDict[post.userId])
-      .map( post => {
-        post.displayName = `${userDict[post.userId].first} ${userDict[post.userId].last}`;
+      .filter(post => userDict[post.userId])
+      .map(post => {
+        post.displayName = `${userDict[post.userId].first} ${
+          userDict[post.userId].last
+        }`;
         return post;
       });
   },
